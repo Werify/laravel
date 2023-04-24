@@ -1,6 +1,6 @@
 <?php
 
-namespace Werify\Laravel\Account\Jobs;
+namespace Werify\Laravel\Jobs\Account;
 
 use Exception;
 use Werify\Laravel\Jobs\BaseJob;
