@@ -1,10 +1,10 @@
 <?php
 
-namespace Werify\IdLaravel\Http\Middlewares;
+namespace Werify\Laravel\Http\Middlewares;
 
 use Closure;
 use Exception;
-use Werify\IdLaravel\Jobs\GetUserProfileJob;
+use Werify\Laravel\Jobs\GetUserProfileJob;
 use Illuminate\Support\Facades\Cache;
 use Throwable;
 

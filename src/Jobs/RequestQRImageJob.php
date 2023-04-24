@@ -1,6 +1,6 @@
 <?php
 
-namespace Werify\IdLaravel\Jobs;
+namespace Werify\Laravel\Jobs;
 
 use Exception;
 
@@ -12,8 +12,16 @@ class RequestQRImageJob extends BaseJob
 	}
 	public function handle()
 	{
-		$path = $this->generateUrl(config('werify-auth-service.api.qr-image').'/'.$this->id.'/'.$this->hash);
-		$request = $this->get($path);
-        return $request->body();
+        try {
+            $path = $this->generateUrl(config('werify-auth-service.api.qr-image').'/'.$this->id.'/'.$this->hash);
+            $request = $this->get($path);
+            return $request->body();
+        } catch (Exception $exception) {
+            if (config('werify.account.debug')) {
+                return $exception;
+            }
+        }
+
+        throw new Exception('Request QR Image Failed');
 	}
 }

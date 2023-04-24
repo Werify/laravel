@@ -1,13 +1,13 @@
 <?php
 
-namespace Werify\IdLaravel\Http\Controllers\Api\V1;
+namespace Werify\Laravel\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
-use Werify\IdLaravel\Jobs\RequestOTPJob;
-use Werify\IdLaravel\Jobs\RequestQRImageJob;
-use Werify\IdLaravel\Jobs\RequestQRJob;
-use Werify\IdLaravel\Jobs\VerifyOTPJob;
-use  Werify\IdLaravel\Jobs\ClaimQRJob;
+use Werify\Laravel\Jobs\RequestOTPJob;
+use Werify\Laravel\Jobs\RequestQRImageJob;
+use Werify\Laravel\Jobs\RequestQRJob;
+use Werify\Laravel\Jobs\VerifyOTPJob;
+use  Werify\Laravel\Jobs\ClaimQRJob;
 
 class AuthController extends Controller
 {

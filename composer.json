@@ -1,11 +1,11 @@
 {
-    "name": "werify/id-laravel",
-    "description": "werify id pacakge for laravel.",
+    "name": "werify/laravel",
+    "description": "werify pacakge for laravel.",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Werify\\IdLaravel\\": "src/"
+            "Werify\\Laravel\\": "src/"
         }
     },
     "authors": [
@@ -18,7 +18,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Werify\\IdLaravel\\Providers\\WerifyIDServiceProvider"
+              "Werify\\Laravel\\Providers\\WerifyServiceProvider"
             ]
         }
     }
