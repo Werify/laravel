@@ -1,5 +1,6 @@
 <?php
 
+use Werify\Laravel\Http\Controllers\Api\V1\AccountController;
 use Werify\Laravel\Http\Controllers\Api\V1\AuthController;
 
 return [
@@ -14,6 +15,11 @@ return [
             'qr' => 'qr',
             'qr-image' => 'qr-image',
             'qr-claim' => 'qr-claim',
+            'profile' => '/account',
+            'profile-mobile-numbers' => '/account/mobile-numbers',
+            'profile-metas' => '/account/metas',
+            'profile-education' => '/account/education',
+            'profile-financial-information' => '/account/financial-information',
         ],
         'controllers' => [
             'AuthController' => [
@@ -23,6 +29,14 @@ return [
                 'qr' => 'qr',
                 'qr-image' => 'qrImage',
                 'qr-claim' => 'qrClaim',
+            ],
+            'AccountController' => [
+                'class' => AccountController::class,
+                'profile' => 'profile',
+                'profile-mobile-numbers' => 'profileMobileNumbers',
+                'profile-metas' => 'profileMetas',
+                'profile-education' => 'profileEducation',
+                'profile-financial-information' => 'profileFinancialInformation',
             ],
         ],
         'api' => [
