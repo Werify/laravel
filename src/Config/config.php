@@ -1,6 +1,6 @@
 <?php
 
-use Werify\IdLaravel\Http\Controllers\Api\V1\AuthController;
+use Werify\Laravel\Http\Controllers\Api\V1\AuthController;
 
 return [
     'account' => [

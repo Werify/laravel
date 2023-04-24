@@ -50,7 +50,7 @@ After you installed `werify/id-laravel` library already. Next, you need to **con
 this package publishes routes and jobs to connect to werify id service.
 
 #### jobs
-jobs published under `Werify\IdLaravel\Jobs` namespace are :
+jobs published under `Werify\Laravel\Jobs` namespace are :
 
 - GetUserProfileJob
 - GetUserProfileFinancialInformationJob
