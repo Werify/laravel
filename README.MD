@@ -47,45 +47,6 @@ Please see configuration section below for configuring your Omise Keys.
 After you installed `werify/laravel` library already. Next, you need to **configure** laravel. you can publish configuration files and see config in `config/werify` config file.
 
 ## Usage
-this package publishes routes and jobs to connect to werify service.
-
-#### jobs
-jobs published under `Werify\Laravel\Jobs` namespace are :
-
-- GetUserProfileJob
-- GetUserProfileFinancialInformationJob
-- GetUserProfileMetasJob
-- GetUserProfileNumbersJob
-- RequestOTPJob
-- VerifyOTPJob
-- GetUserProfileEducationJob
-
-#### Routes
-- GET|HEAD  api/werify/request-otp
-- GET|HEAD  api/werify/verify-otp
-
-##### request otp:
-route: api/werify/request-otp
-params: 
-
-- identifier (string)
-
-response: 
-
-- id (string)
-- hash(string)
-- otp(string)
-
-##### verify otp:
-route: api/werify/verify-otp
-params: 
-
--  id (string)
-- hash(string)
-- otp(string)
-
-response: 
-
-- user info and access_token 
+this package publishes routes and jobs to connect to werify service. 
 
 you can see [changelog](CHANGELOG.MD) here.
