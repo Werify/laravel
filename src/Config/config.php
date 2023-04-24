@@ -6,6 +6,7 @@ return [
     'account' => [
         'version' => 'v1',
         'app_key' => 'not_set',
+        'debug' => env('WERIFY_DEBUG', env('APP_DEBUG')),
         'routes' => [
             'group' => 'api/werify',
             'request-otp' => '/request-otp',
