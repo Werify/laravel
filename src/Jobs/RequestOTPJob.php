@@ -1,6 +1,6 @@
 <?php
 
-namespace Werify\IdLaravel\Jobs;
+namespace Werify\Laravel\Jobs;
 
 use Exception;
 

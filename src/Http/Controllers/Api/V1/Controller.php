@@ -1,6 +1,6 @@
 <?php
 
-namespace Werify\IdLaravel\Http\Controllers\Api\V1;
+namespace Werify\Laravel\Http\Controllers\Api\V1;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;

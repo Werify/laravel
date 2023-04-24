@@ -1,10 +1,10 @@
 <?php
 
-namespace Werify\IdLaravel\Providers;
+namespace Werify\Laravel\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class WerifyIDServiceProvider extends ServiceProvider
+class WerifyServiceProvider extends ServiceProvider
 {
 	public function boot()
 	{
@@ -12,13 +12,13 @@ class WerifyIDServiceProvider extends ServiceProvider
 
 		if ($this->app->runningInConsole()) {
 			$this->publishes([
-				__DIR__ . '/../Config/config.php' => config_path('werify-auth-service.php'),
+				__DIR__ . '/../Config/config.php' => config_path('werify.php'),
 			], 'config');
 		}
 	}
 
 	public function register()
 	{
-		$this->mergeConfigFrom(__DIR__ . '/../Config/config.php', 'werify-auth-service');
+		$this->mergeConfigFrom(__DIR__ . '/../Config/config.php', 'werify');
 	}
 }
