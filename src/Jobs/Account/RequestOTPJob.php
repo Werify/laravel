@@ -1,17 +1,18 @@
 <?php
 
-namespace Werify\Laravel\Jobs;
+namespace Werify\Laravel\Account\Jobs;
 
 use Exception;
+use Werify\Laravel\Jobs\BaseJob;
 
 class RequestOTPJob extends BaseJob
 {
 
-	public function __construct(public string $identifier)
-	{
-	}
-	public function handle()
-	{
+    public function __construct(public string $identifier)
+    {
+    }
+    public function handle()
+    {
         try {
             $path = $this->generateUrl(config('werify-auth-service.api.request-otp'));
             $payload = ['identifier' => $this->identifier];
@@ -25,6 +26,6 @@ class RequestOTPJob extends BaseJob
             }
         }
 
-		throw new Exception('Request OTP Failed');
-	}
+        throw new Exception('Request OTP Failed');
+    }
 }

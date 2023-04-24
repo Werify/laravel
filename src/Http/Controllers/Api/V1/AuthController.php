@@ -3,11 +3,11 @@
 namespace Werify\Laravel\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
-use Werify\Laravel\Jobs\RequestOTPJob;
-use Werify\Laravel\Jobs\RequestQRImageJob;
-use Werify\Laravel\Jobs\RequestQRJob;
-use Werify\Laravel\Jobs\VerifyOTPJob;
-use  Werify\Laravel\Jobs\ClaimQRJob;
+use Werify\Laravel\Jobs\Account\RequestOTPJob;
+use Werify\Laravel\Jobs\Account\RequestQRImageJob;
+use Werify\Laravel\Jobs\Account\RequestQRJob;
+use Werify\Laravel\Jobs\Account\VerifyOTPJob;
+use  Werify\Laravel\Jobs\Account\ClaimQRJob;
 
 class AuthController extends Controller
 {
@@ -44,7 +44,7 @@ class AuthController extends Controller
 		$result = dispatch_sync(new RequestQRJob());
 		$id = $result['results']['id'];
 		$hash = $result['results']['hash'];
-		return dispatch_sync(new RequestQRImageJob($id,$hash));
+		return dispatch_sync(new RequestQRImageJob($id, $hash));
 	}
 
 	public function qrClaim(Request $request)
@@ -57,6 +57,6 @@ class AuthController extends Controller
 			]
 		);
 
-		return dispatch_sync(new ClaimQRJob($request->token,$validated['id'],$validated['hash']));
+		return dispatch_sync(new ClaimQRJob($request->token, $validated['id'], $validated['hash']));
 	}
 }

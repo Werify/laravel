@@ -3,11 +3,11 @@
 namespace Werify\Laravel\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
-use Werify\Laravel\Jobs\GetUserProfileEducationJob;
-use Werify\Laravel\Jobs\GetUserProfileFinancialInformationJob;
-use Werify\Laravel\Jobs\GetUserProfileJob;
-use Werify\Laravel\Jobs\GetUserProfileMetasJob;
-use Werify\Laravel\Jobs\GetUserProfileNumbersJob;
+use Werify\Laravel\Jobs\Account\GetUserProfileEducationJob;
+use Werify\Laravel\Jobs\Account\GetUserProfileFinancialInformationJob;
+use Werify\Laravel\Jobs\Account\GetUserProfileJob;
+use Werify\Laravel\Jobs\Account\GetUserProfileMetasJob;
+use Werify\Laravel\Jobs\Account\GetUserProfileNumbersJob;
 
 class AccountController extends Controller
 {

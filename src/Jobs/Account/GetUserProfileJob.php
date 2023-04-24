@@ -1,17 +1,18 @@
 <?php
 
-namespace Werify\Laravel\Jobs;
+namespace Werify\Laravel\Account\Jobs;
 
 use Exception;
+use Werify\Laravel\Jobs\BaseJob;
 
 class GetUserProfileJob extends BaseJob
 {
 
-	public function __construct(public string $token)
-	{
-	}
-	public function handle()
-	{
+    public function __construct(public string $token)
+    {
+    }
+    public function handle()
+    {
         try {
             $path = $this->generateUrl(config('werify-auth-service.api.profile'));
             $request = $this->get($path, $this->token);
@@ -24,6 +25,6 @@ class GetUserProfileJob extends BaseJob
             }
         }
 
-		throw new Exception('Failed to get profile');
-	}
+        throw new Exception('Failed to get profile');
+    }
 }
