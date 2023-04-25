@@ -1,19 +1,20 @@
 <?php
 
-namespace Werify\Laravel\Jobs;
+namespace Werify\Laravel\Jobs\Account;
 
 use Exception;
+use Werify\Laravel\Jobs\BaseJob;
 
 class GetUserProfileEducationJob extends BaseJob
 {
+    public function __construct(public string $token)
+    {
+    }
 
-	public function __construct(public string $token)
-	{
-	}
-	public function handle()
-	{
+    public function handle()
+    {
         try {
-            $path = $this->generateUrl(config('werify-auth-service.api.profile-mobile-education'));
+            $path = $this->generateAccountsUrl(config('werify-auth-service.api.profile-mobile-education'));
             $request = $this->get($path, $this->token);
             if ($request->status() === 200) {
                 return $request->json();
@@ -24,6 +25,6 @@ class GetUserProfileEducationJob extends BaseJob
             }
         }
 
-		throw new Exception('Failed to get profile education');
-	}
+        throw new Exception('Failed to get profile education');
+    }
 }
