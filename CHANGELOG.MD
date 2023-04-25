@@ -10,7 +10,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### fixes
 []() renamed middleware from `WerifyAuthMiddleware` to `werifyAccountMiddleware` .
-[a340eee](https://github.com/Werify/core/commit/a340eeee251c6c4dbd23fe80b550e69c2c80850e) change comments route folder 
 
 ## [0.0.2] - 2023-04-24
 ### new features
