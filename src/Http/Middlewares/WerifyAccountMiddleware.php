@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Cache;
 use Throwable;
 use Werify\Laravel\Jobs\GetUserProfileJob;
 
-class WerifyAuthMiddleware
+class WerifyAccountMiddleware
 {
     public function handle($request, Closure $next)
     {
