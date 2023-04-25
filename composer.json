@@ -14,12 +14,14 @@
             "email": "arashrasoulzadeh@gmail.com"
         }
     ],
-    "require": {},
     "extra": {
         "laravel": {
             "providers": [
               "Werify\\Laravel\\Providers\\WerifyServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "laravel/pint": "^1.9"
     }
 }

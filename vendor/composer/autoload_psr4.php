@@ -6,5 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Werify\\IdLaravel\\' => array($baseDir . '/src'),
+    'Werify\\Laravel\\' => array($baseDir . '/src'),
+    'Database\\Seeders\\' => array($vendorDir . '/laravel/pint/database/seeders'),
+    'Database\\Factories\\' => array($vendorDir . '/laravel/pint/database/factories'),
+    'App\\' => array($vendorDir . '/laravel/pint/app'),
 );

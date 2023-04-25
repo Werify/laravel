@@ -4,6 +4,15 @@ use Werify\Laravel\Http\Controllers\Api\V1\AccountController;
 use Werify\Laravel\Http\Controllers\Api\V1\AuthController;
 
 return [
+    'comment' => [
+        'version' => 'v1',
+        'debug' => env('WERIFY_DEBUG', env('APP_DEBUG')),
+        'routes' => [],
+        'api' => [
+            'base_path' => 'https://api.werify.net',
+            'base_api_path' => 'https://api.werify.net/api',
+        ],
+    ],
     'account' => [
         'version' => 'v1',
         'app_key' => 'not_set',

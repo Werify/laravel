@@ -9,14 +9,35 @@ class ComposerStaticInita9bf3a03f7c73c0f91545786f30f2707
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
-            'Werify\\IdLaravel\\' => 17,
+            'Werify\\Laravel\\' => 15,
+        ),
+        'D' => 
+        array (
+            'Database\\Seeders\\' => 17,
+            'Database\\Factories\\' => 19,
+        ),
+        'A' => 
+        array (
+            'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Werify\\IdLaravel\\' => 
+        'Werify\\Laravel\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Database\\Seeders\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/pint/database/seeders',
+        ),
+        'Database\\Factories\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/pint/database/factories',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/pint/app',
         ),
     );
 

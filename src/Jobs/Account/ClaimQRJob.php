@@ -7,14 +7,14 @@ use Werify\Laravel\Jobs\BaseJob;
 
 class ClaimQRJob extends BaseJob
 {
-
     public function __construct(public string $token, public string $id, public string $hash)
     {
     }
+
     public function handle()
     {
         try {
-            $path = $this->generateUrl(config('werify-auth-service.api.qr-claim') . $this->id . '/' . $this->hash);
+            $path = $this->generateAccountsUrl(config('werify-auth-service.api.qr-claim').$this->id.'/'.$this->hash);
             $request = $this->get($path, $this->token);
 
             if ($request->status() === 200) {
