@@ -6,7 +6,7 @@ use Closure;
 use Exception;
 use Illuminate\Support\Facades\Cache;
 use Throwable;
-use Werify\Laravel\Jobs\GetUserProfileJob;
+use Werify\Laravel\Jobs\Account\GetUserProfileJob;
 
 class WerifyAccountMiddleware
 {

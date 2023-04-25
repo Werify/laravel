@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc9491cc-6981-4994-aa14-4c2fb55b9c24" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.MD" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Http/Middlewares/WerifyAccountMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Http/Middlewares/WerifyAccountMiddleware.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1682422620563</updated>
       <workItem from="1682422621769" duration="9000" />
-      <workItem from="1682422636915" duration="1335000" />
+      <workItem from="1682422636915" duration="1986000" />
     </task>
     <servers />
   </component>
