@@ -7,18 +7,27 @@ return [
     'comment' => [
         'version' => 'v1',
         'debug' => env('WERIFY_DEBUG', env('APP_DEBUG')),
-        'routes' => [],
         'api' => [
             'base_path' => 'https://api.werify.net',
             'base_api_path' => 'https://api.werify.net/api',
         ],
+		'controllers' => [
+			'CommentController' => [
+				'class' => \Werify\Laravel\Http\Controllers\Api\V1\CommentController::class,
+				'compose' => 'compose'
+			]
+		],
+		'routes' => [
+			'group' => 'api/werify/comment',
+			'compose' => 'compose'
+		]
     ],
     'account' => [
         'version' => 'v1',
         'app_key' => 'not_set',
         'debug' => env('WERIFY_DEBUG', env('APP_DEBUG')),
         'routes' => [
-            'group' => 'api/werify',
+            'group' => 'api/werify/accounts',
             'request-otp' => '/request-otp',
             'verify-otp' => '/verify-otp',
             'qr' => 'qr',
@@ -32,7 +41,7 @@ return [
         ],
         'controllers' => [
             'AuthController' => [
-                'class' => AuthController::class,
+                'class' => \Werify\Laravel\Http\Controllers\Api\V1\AuthController::class,
                 'request-otp' => 'requestOTP',
                 'verify-otp' => 'verifyOTP',
                 'qr' => 'qr',
@@ -40,7 +49,7 @@ return [
                 'qr-claim' => 'qrClaim',
             ],
             'AccountController' => [
-                'class' => AccountController::class,
+                'class' => \Werify\Laravel\Http\Controllers\Api\V1\AccountController::class,
                 'profile' => 'profile',
                 'profile-mobile-numbers' => 'profileMobileNumbers',
                 'profile-metas' => 'profileMetas',
