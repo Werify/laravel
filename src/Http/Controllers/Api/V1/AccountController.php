@@ -11,28 +11,28 @@ use Werify\Laravel\Jobs\Account\GetUserProfileNumbersJob;
 
 class AccountController extends Controller
 {
-    public function profile(Request $request)
-    {
-        return dispatch_sync(new GetUserProfileJob($request->header('authorization')));
-    }
+	public function profile(Request $request)
+	{
+		return dispatch_sync(new GetUserProfileJob($request->header('authorization')));
+	}
 
-    public function profileMobileNumbers(Request $request)
-    {
-        return dispatch_sync(new GetUserProfileNumbersJob($request->header('authorization')));
-    }
+	public function profileMobileNumbers(Request $request)
+	{
+		return dispatch_sync(new GetUserProfileNumbersJob($request->header('authorization')));
+	}
 
-    public function profileMetas(Request $request)
-    {
-        return dispatch_sync(new GetUserProfileMetasJob($request->header('authorization')));
-    }
+	public function profileMetas(Request $request)
+	{
+		return dispatch_sync(new GetUserProfileMetasJob($request->header('authorization')));
+	}
 
-    public function profileEducation(Request $request)
-    {
-        return dispatch_sync(new GetUserProfileEducationJob($request->header('authorization')));
-    }
+	public function profileEducation(Request $request)
+	{
+		return dispatch_sync(new GetUserProfileEducationJob($request->header('authorization')));
+	}
 
-    public function profileFinancialInformation(Request $request)
-    {
-        return dispatch_sync(new GetUserProfileFinancialInformationJob($request->header('authorization')));
-    }
+	public function profileFinancialInformation(Request $request)
+	{
+		return dispatch_sync(new GetUserProfileFinancialInformationJob($request->header('authorization')));
+	}
 }
