@@ -1,6 +1,6 @@
 {
     "name": "werify/laravel",
-    "description": "werify pacakge for laravel.",
+    "description": "werify package for laravel.",
     "type": "library",
     "license": "MIT",
     "autoload": {
