@@ -5,11 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 
-## [0.0.2] - 2023-04-25
+## [0.0.2] - 2023-04-26
 ### new features
-[]() requests for each services
+[83f0b6a](https://github.com/Werify/laravel/commit/83f0b6abe3bb0d96516a754f3258e3cae60507cf) requests for each services
 ### fixes
-[]() renamed middleware from `WerifyAuthMiddleware` to `werifyAccountMiddleware` .
 
 ## [0.0.2] - 2023-04-24
 ### new features
