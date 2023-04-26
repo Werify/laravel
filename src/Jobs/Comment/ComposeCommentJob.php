@@ -3,29 +3,28 @@
 namespace Werify\Laravel\Jobs\Comment;
 
 use Exception;
-use Werify\Laravel\Jobs\BaseJob;
+use Werify\Laravel\Repositories\CommentRequest;
 
-class ComposeCommentJob extends BaseJob
+class ComposeCommentJob extends CommentRequest
 {
-    public function __construct(public string $token, public string $id, public string $hash)
-    {
-    }
+	public function __construct(public string $token, public array $data)
+	{
+	}
 
-    public function handle()
-    {
-        try {
-            $path = $this->generateCommentsUrl(config('werify.comment.store').$this->id.'/'.$this->hash);
-            $request = $this->get($path, $this->token);
+	public function handle()
+	{
+		try {
+			$path = $this->generateApiUrl(config('werify.comment.api.compose'));
+			$request = $this->post($path, $this->data, $this->token);
+			if ($request->status() === 200) {
+				return $request->json();
+			}
+		} catch (Exception $exception) {
+			if (config('werify.comment.debug')) {
+				return $exception;
+			}
+		}
 
-            if ($request->status() === 200) {
-                return $request->json();
-            }
-        } catch (Exception $exception) {
-            if (config('werify.account.debug')) {
-                return $exception;
-            }
-        }
-
-        throw new Exception('Request QR Failed');
-    }
+		throw new Exception('Cannot Compose Comment!');
+	}
 }
