@@ -3,9 +3,9 @@
 namespace Werify\Laravel\Jobs\Account;
 
 use Exception;
-use Werify\Laravel\Jobs\BaseJob;
+use Werify\Laravel\Repositories\AccountRequest;
 
-class RequestQRImageJob extends BaseJob
+class RequestQRImageJob extends AccountRequest
 {
     public function __construct(public string $id, public string $hash)
     {
@@ -14,7 +14,7 @@ class RequestQRImageJob extends BaseJob
     public function handle()
     {
         try {
-            $path = $this->generateAccountsUrl(config('werify-auth-service.api.qr-image').'/'.$this->id.'/'.$this->hash);
+            $path = $this->generateApiUrl(config('werify.account.api.qr-image').'/'.$this->id.'/'.$this->hash);
             $request = $this->get($path);
 
             return $request->body();

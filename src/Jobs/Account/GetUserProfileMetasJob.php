@@ -3,9 +3,9 @@
 namespace Werify\Laravel\Jobs\Account;
 
 use Exception;
-use Werify\Laravel\Jobs\BaseJob;
+use Werify\Laravel\Repositories\AccountRequest;
 
-class GetUserProfileMetasJob extends BaseJob
+class GetUserProfileMetasJob extends AccountRequest
 {
     public function __construct(public string $token)
     {
@@ -14,7 +14,7 @@ class GetUserProfileMetasJob extends BaseJob
     public function handle()
     {
         try {
-            $path = $this->generateAccountsUrl(config('werify-auth-service.api.profile-metas'));
+            $path = $this->generateApiUrl(config('werify.account.api.profile-metas'));
             $request = $this->get($path, $this->token);
             if ($request->status() === 200) {
                 return $request->json();

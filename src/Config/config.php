@@ -1,31 +1,40 @@
 <?php
 
-use Werify\Laravel\Http\Controllers\Api\V1\AccountController;
-use Werify\Laravel\Http\Controllers\Api\V1\AuthController;
-
 return [
     'comment' => [
         'version' => 'v1',
         'debug' => env('WERIFY_DEBUG', env('APP_DEBUG')),
+        'beta_channel' => env('WERIFY_COMMENT_BETA', false),
+        'project_key' => env('WERIFY_PROJECT_ID', 'sandbox'),
         'api' => [
             'base_path' => 'https://api.werify.net',
             'base_api_path' => 'https://api.werify.net/api',
+            'next_api' => 'https://next-api.werify.net',
+            'next_api_path' => 'https://next-api.werify.net/api',
+            'compose' => 'user/comments/compose',
+            'reply' => 'user/comments/compose/{id}',
+            'index' => 'user/comments',
         ],
-		'controllers' => [
-			'CommentController' => [
-				'class' => \Werify\Laravel\Http\Controllers\Api\V1\CommentController::class,
-				'compose' => 'compose'
-			]
-		],
-		'routes' => [
-			'group' => 'api/werify/comment',
-			'compose' => 'compose'
-		]
+        'controllers' => [
+            'CommentController' => [
+                'class' => \Werify\Laravel\Http\Controllers\Api\V1\CommentController::class,
+                'compose' => 'compose',
+                'reply' => 'reply',
+                'index' => 'index',
+            ],
+        ],
+        'routes' => [
+            'group' => 'api/werify/comment',
+            'compose' => 'compose',
+            'reply' => '{id}/reply',
+            'index' => 'index',
+        ],
     ],
     'account' => [
         'version' => 'v1',
-        'app_key' => 'not_set',
+        'api_key' => 'not_set',
         'debug' => env('WERIFY_DEBUG', env('APP_DEBUG')),
+        'beta_channel' => env('WERIFY_ACCOUNT_BETA', false),
         'routes' => [
             'group' => 'api/werify/accounts',
             'request-otp' => '/request-otp',
@@ -60,6 +69,8 @@ return [
         'api' => [
             'base_path' => 'https://id.werify.net',
             'base_api_path' => 'https://id.werify.net/api',
+            'next_path' => 'https://next-id.werify.net',
+            'next_api_path' => 'https://next-id.werify.net/api',
             'request-otp' => 'request-otp',
             'verify-otp' => 'verify-otp',
             'profile' => 'user/profile',

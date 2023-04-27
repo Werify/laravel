@@ -3,9 +3,9 @@
 namespace Werify\Laravel\Jobs\Account;
 
 use Exception;
-use Werify\Laravel\Jobs\BaseJob;
+use Werify\Laravel\Repositories\AccountRequest;
 
-class RequestQRJob extends BaseJob
+class RequestQRJob extends AccountRequest
 {
     public function __construct()
     {
@@ -14,7 +14,7 @@ class RequestQRJob extends BaseJob
     public function handle()
     {
         try {
-            $path = $this->generateAccountsUrl(config('werify-auth-service.api.qr'));
+            $path = $this->generateApiUrl(config('werify.account.api.qr'));
             $request = $this->get($path);
             if ($request->status() === 200) {
                 return $request->json();
