@@ -81,6 +81,7 @@ return [
             'qr' => 'qr',
             'qr-image' => 'qr',
             'qr-claim' => 'user/qr/',
+			'single' => 'user/profile/{id}'
         ],
     ],
 ];
