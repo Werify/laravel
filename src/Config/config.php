@@ -81,7 +81,14 @@ return [
             'qr' => 'qr',
             'qr-image' => 'qr',
             'qr-claim' => 'user/qr/',
-			'single' => 'user/profile/{id}'
+            'single' => 'user/profile/{id}',
+        ],
+        'trusted' => [
+            'account' => [
+                'base_api_path' => 'https://api.werify.net',
+                'next_path' => 'https://next-api.werify.net',
+                'get-user' => 'get-user',
+            ],
         ],
     ],
 ];
