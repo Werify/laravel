@@ -7,7 +7,7 @@ use Werify\Laravel\Repositories\AccountRequest;
 
 class GetSingleProfileJob extends AccountRequest
 {
-    public function __construct(public string $token,public string $uuid)
+    public function __construct(public string $token, public string $uuid)
     {
     }
 
@@ -15,7 +15,7 @@ class GetSingleProfileJob extends AccountRequest
     {
         try {
             $path = $this->generateApiUrl(config('werify.account.api.single'));
-			$path = str_replace('{id}',$this->uuid,$path);
+            $path = str_replace('{id}', $this->uuid, $path);
             $request = $this->get($path, $this->token);
             if ($request->status() === 200) {
                 return $request->json()['results'] ?? $request->json();
